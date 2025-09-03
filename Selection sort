@@ -1,0 +1,46 @@
+What is Selection Sort?
+
+Selection Sort is a simple sorting algorithm.
+It works by repeatedly finding the smallest (or largest) element from the unsorted part of the array and putting it in the correct position.
+
+🔹 Steps of Selection Sort:
+Start with the first element.
+Find the smallest element in the array.
+Swap it with the first element.
+Move to the next position and repeat until the array is sorted.
+
+🔹 Example:
+Suppose we have an array:
+[64, 25, 12, 22, 11]
+Pass 1 → Smallest is 11, swap with first → [11, 25, 12, 22, 64]
+Pass 2 → Smallest in remaining part is 12, swap with 25 → [11, 12, 25, 22, 64]
+Pass 3 → Smallest is 22, swap with 25 → [11, 12, 22, 25, 64]
+Pass 4 → Already sorted.
+
+✅ Final sorted array: [11, 12, 22, 25, 64]
+
+
+public class SelectionSort {
+    public static void main(String[] args) {
+        int[] arr = {64, 25, 12, 22, 11};
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i; // assume current index is smallest
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j; // update min index
+                }
+            }
+            // swap arr[i] and arr[minIndex]
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+
+        // Print sorted array
+        System.out.print("Sorted array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
