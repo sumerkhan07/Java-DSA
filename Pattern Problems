@@ -1,0 +1,19 @@
+package Array;
+
+public class Pattern {
+    public static void main(String[] args) {
+        printp(4);
+
+    }
+    public static  void printp(int n){
+        for (int i=0; i<n; i++)//First for loop is always go for the for loop
+        {
+            for (int j = 0; j<n; j++) {
+                //System.out.print(n);
+                System.out.print("*");
+
+            }
+            System.out.println();
+        }
+    }
+}
