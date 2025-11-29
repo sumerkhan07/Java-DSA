@@ -1,0 +1,31 @@
+package Array;
+
+import java.util.Arrays;
+
+public class Arrayrotation {
+    public static void main(String[] args) {
+
+        int arr[] = {1, 2, 4, 2, 5};
+        rotate(arr,2,5);
+        System.out.println(Arrays.toString(arr));
+
+
+    }
+    public static void rotate(int arr[], int n, int d){
+        arrrotate(arr,0,d-1);
+        arrrotate(arr, 2,n-1);
+        arrrotate(arr, 0,n-1);
+
+    }
+
+    public static void arrrotate(int arr[], int i ,int j) {
+        while (i <= j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+}
